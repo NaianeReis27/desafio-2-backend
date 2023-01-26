@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Transações{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container_form">
+        <h2>Adicionar documento</h2>
+    <form method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <input type="file" name="document" required id="file" >
+        <input type="submit">
+    </form>
+    </div>
+    
+    <div>
+        <table class="table">
+            <caption>Lista de transações</caption>
+            <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Cliente</th>
+                <th>Cpf</th>
+                <th>Cartão</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Loja</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for transaction in transactions %}
+                    
+                    <tr>
+                        <td>{{transaction.type}}</td>
+                        <td>{{transaction.value}}</td>
+                        <td>{{transaction.owner}}</td>
+                        <td>{{transaction.cpf}}</td>
+                        <td>{{transaction.card}}</td>
+                        <td>{{transaction.data}}</td>
+                        <td>{{transaction.hour}}</td>
+                        <td>{{transaction.store}}</td>
+                    </tr>
+                   
+                
+            
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

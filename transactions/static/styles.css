@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1050px;
+    width: 100%;
+    padding: 0 30px ;
+}
+
+form, h2{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.table {
+    padding:5px;
+}
+.table th {
+    padding:5px;
+    background:#1b717d51;
+}
+.table td {
+    border: solid 1px #1b717d51; 
+    text-align:Centro;
+    border-collapse: collapse;
+    padding:10px 25px;
+}
