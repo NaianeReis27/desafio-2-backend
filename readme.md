@@ -65,4 +65,3 @@ tipo |  data  |  valor   | cpf       | cartão     | hora  |cliente    | nome da
 - [x] Ser simples de configurar e rodar, de preferência dockerizado e funcionando em ambiente compatível com Unix (Linux ou Mac OS X). Ela deve utilizar apenas linguagens e bibliotecas livres ou gratuitas.
 
 
-image.png
