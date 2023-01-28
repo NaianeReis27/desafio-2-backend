@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% block title %}{{transactions.1.store}}{% endblock %} 
+{%block content %}
+
+<div class="container">
+  <a href="/"> Voltar </a>
+  <div class="container_info">
+    <span> R$ {{soma}}</span>
+    <span> Loja:  {{transactions.1.store}}</span>
+    <span> Cliente:  {{transactions.1.owner}}</span>
+  </div>
+  
+    {% if transactions %}
+    <div class="container-table">
+      <div class="table">
+        <table >
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Valor</th>
+              <th>Cliente</th>
+              <th>Cpf</th>
+              <th>Cartão</th>
+              <th>Data</th>
+              <th>Hora</th>
+              <th>Loja</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for transaction in transactions %}
+            <tr>
+              <td>{{transaction.type}}</td>
+              <td>{{transaction.value}}</td>
+              <td>{{transaction.owner}}</td>
+              <td>{{transaction.cpf}}</td>
+              <td>{{transaction.card}}</td>
+              <td>{{transaction.data}}</td>
+              <td>{{transaction.hour}}</td>
+              <td>{{transaction.store}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          {% endif %}
+        </table>
+      </div>
+    </div>
+</div>
+{% endblock %}

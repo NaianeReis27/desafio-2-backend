@@ -7,17 +7,18 @@
     <h2>Adicionar documento</h2>
     <form method="post" enctype="multipart/form-data" >
       {% csrf_token %}
-      <input type="file" name="document" required id="file" />
+      <div>
+        <label for="document">Enviar arquivo</label>
+        <input type="file" name="document" required id="document" />
+      </div>
+      
       <input type="submit" />
     </form>
   </div>
-  
-  {% if transactions %}
+{% if transactions %}
   <div class="container-table">
-    <table class="table">
-      <caption>
-        Lista de transações
-      </caption>
+  <div class="table">
+    <table>
       <thead>
         <tr>
           <th>Tipo</th>
@@ -46,6 +47,10 @@
         {% endfor %}
       </tbody>
     </table>
+
+
+  </div>
+    
   </div>
   {% else %}
   {% endif %}
