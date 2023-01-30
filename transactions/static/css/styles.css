@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +14,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .container-table {
@@ -31,10 +29,60 @@ main {
     box-shadow: 1px 2px 40px -12px rgba(0, 0, 0, 0.18);
 }
 
+.modal {
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    background: rgba(4, 4, 4, 0.592);
+    transition: opacity .25s ease;
+}
+
+.modal__inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 450px;
+    margin: auto;
+    overflow: auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    height: 350px;
+    
+     
+}
+
+
+.modal__inner div {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+
+}
+
+.modal__inner div button{
+    background: none;
+    height: 38px;
+    border: none;
+    cursor: pointer;
+}
+
 .container {
-  display: flex;
-  gap:45px;
-  flex-direction: column;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.container_info img, .container a img, .modal__inner div button img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
 }
 
 *::-webkit-scrollbar {
@@ -46,28 +94,37 @@ main {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #acca82;
+    background-color: #2BC48A;
     border-radius: 10px;
     border: 3px solid #ffffff;
 }
 
-form, .container_info{
+form, .container_info {
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
     gap: 25px;
 }
 
-.container_info{
+.container_info {
     width: 100%;
     height: 70px;
-    background-color:#ebecea ;
+    background-color: #ebecea;
     padding: 20px;
     border-radius: 15px;
     font-weight: 600;
+    -webkit-box-shadow: 1px 2px 40px -12px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 1px 2px 40px -12px rgba(0, 0, 0, 0.18);
+    box-shadow: 1px 2px 40px -12px rgba(0, 0, 0, 0.18);
 }
 
-span{
+
+.container_info div {
+    display: flex;
+    gap: 12px;
+}
+
+span {
     display: flex;
     align-items: center;
 }
@@ -79,8 +136,8 @@ input[type="file"] {
 input[type="submit"] {
     padding: 20px 10px;
     width: 200px;
-    background-color: #ACCA82;
-    color: rgb(80, 80, 80);
+    background-color: #2BC48A;
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -107,12 +164,15 @@ label {
     border-radius: 10px;
 }
 
-.table{
+.table {
     display: flex;
     justify-content: center;
     overflow: auto;
     max-height: 620px;
+    padding-right: 22px;
+    margin-left: 22px;
 }
+
 table {
     padding: 5px;
     border-collapse: collapse;
@@ -132,4 +192,31 @@ table td {
 
 tr:nth-child(even) {
     background: #d1d3d5;
+}
+
+.sucess, .error{
+    border-bottom: #313131 solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap: 25px;
+}
+
+.info > img{
+    margin-top: 30px;
+    width: 50px;
+    height: 50px;
+}
+.error > img, .sucess > img{
+    margin: 5px;
+    width: 20px;
+    height: 20px;
 }

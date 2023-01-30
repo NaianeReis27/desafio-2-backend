@@ -1,15 +1,22 @@
 {% extends 'base.html' %} 
+{% load static %}
 {% block title %}{{transactions.1.store}}{% endblock %} 
 {%block content %}
 
 <div class="container">
-  <a href="/"> Voltar </a>
+  <a href="/"> <img src="{% static 'assets/back.png' %}" alt="" srcset=""></a>
   <div class="container_info">
-    <span> R$ {{soma}}</span>
-    <span> Loja:  {{transactions.1.store}}</span>
-    <span> Cliente:  {{transactions.1.owner}}</span>
+    <div>
+      <img src="{% static 'assets/carteira.png' %}"><span> R$ {{soma}}</span>
+    </div>
+    <div>
+      <img src="{% static 'assets/shop.png' %}"><span> Loja:  {{transactions.1.store}}</span>
+    </div>
+    <div>
+      <img src="{% static 'assets/user.png' %}"><span> Cliente:  {{transactions.1.owner}}</span>
+    </div>
   </div>
-  
+   
     {% if transactions %}
     <div class="container-table">
       <div class="table">

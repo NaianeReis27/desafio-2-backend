@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content %} 
+{% if msg %}
+<div class="modal" id="modal">
+    
+  <div class="modal__inner">
+
+    <div>
+      <h2>informações</h2>
+      <button type="button" id="btn_modal" onclick="remove()">
+        <img src="{% static 'assets/close.png' %}" />
+      </button>
+    </div>
+
+    {% for m in msg %} 
+    {% if m.type == 'sucess' %}
+
+    <div class="sucess">
+      <p>{{m.msg}}</p>
+      <img src="{% static 'assets/check.png' %}" />
+    </div>
+
+    {% elif  m.type == 'error' %}
+
+    <div class="error">
+      <p>{{m.msg}}</p>
+      <img src="{% static 'assets/warning.png' %}" />
+    </div>
+
+    {% elif  m.type == 'info' %}
+
+    <div class="info">
+        <img src="{% static 'assets/warning.png' %}" />
+        <p>{{m.msg}}</p>
+    </div>
+
+    {% endif %} 
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endif %} 
+{% endblock %}
